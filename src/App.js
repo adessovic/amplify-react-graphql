@@ -17,7 +17,7 @@ function App() {
         </a>
 
         <div>
-          <h3>Guide/Tutorials</h3>
+          <h3>AWS Guide/Tutorials</h3>
           <ul>
             <li>
                 <a
