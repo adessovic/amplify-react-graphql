@@ -1,36 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "@aws-amplify/ui-react/styles.css";
+import {
+  withAuthenticator,
+  Button,
+  Heading,
+  Image,
+  View,
+  Card,
+} from "@aws-amplify/ui-react";
 
-function App() {
+function App({ signOut }) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" style={{ height: '100px' }} />
-        <p>Getting Started with AWS <b>Amplify</b></p>
-        <a
-          href="https://aws.amazon.com/getting-started/hands-on/build-react-app-amplify-graphql/"
-          rel="noopener noreferrer"
-          className="App-link"
-          target="_blank"
-        >
-          Build a Full-Stack React Application
-        </a>
-
-        <div>
-          <h3>AWS Guide/Tutorials</h3>
-          <ul>
-            <li>
-                <a
-                className="App-link"
-                href='https://www.youtube.com/watch?v=9R3v3lhfkTk'
-                target={'_blank'} rel="noreferrer">IAM Users & Groups Tutorial
-                </a>
-              </li>
-          </ul>
-        </div>
-      </header>
-    </div>
+    <View className="App">
+      <Card>
+        <Image src={logo} className="App-logo" alt="logo" />
+        <Heading level={1}>We now have Auth!</Heading>
+      </Card>
+      <Button onClick={signOut}>Sign Out</Button>
+    </View>
   );
 }
 
-export default App;
+export default withAuthenticator(App);
